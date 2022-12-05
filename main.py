@@ -27,7 +27,7 @@ app.add_middleware(
     allow_headers=headers
 )
 
-model_food_vision_dir = "food_vision.h5"
+model_food_vision_dir = "food_vision_model.h5"
 model_food_vision = load_model(model_food_vision_dir,
                                custom_objects={'KerasLayer':hub.KerasLayer})
 
