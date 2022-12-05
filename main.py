@@ -27,118 +27,16 @@ app.add_middleware(
     allow_headers=headers
 )
 
-model_dir = "food_efficientnet.h5"
-model = load_model(model_dir,
-                   custom_objects={'KerasLayer':hub.KerasLayer})
+model_food_vision_dir = "food_vision.h5"
+model_food_vision = load_model(model_food_vision_dir,
+                               custom_objects={'KerasLayer':hub.KerasLayer})
 
-class_predictions = array(['chicken_curry','chicken_wings','fried_rice','grilled_salmon' ,'hamburger','ice_cream' ,'pizza', 'ramen' ,'steak', 'sushi'])
+class_predictions_food_vision = array(['chicken_curry', 'chicken_wings', 'fried_rice', 'grilled_salmon' , 'hamburger', 'ice_cream' , 'pizza', 'ramen' , 'steak', 'sushi'])
 
-model_dir2 = "food-vision-model.h5"
-model2 = load_model(model_dir2)
+model_indian_food_vision_dir = "indian_food_vision_model.h5"
+model_indian_food_vision = load_model(model_indian_food_vision_dir)
 
-class_predictions2 = array([
-    'apple pie',
-    'baby back ribs',
-    'baklava',
-    'beef carpaccio',
-    'beef tartare',
-    'beet salad',
-    'beignets',
-    'bibimbap',
-    'bread pudding',
-    'breakfast burrito',
-    'bruschetta',
-    'caesar salad',
-    'cannoli',
-    'caprese salad',
-    'carrot cake',
-    'ceviche',
-    'cheesecake',
-    'cheese plate',
-    'chicken curry',
-    'chicken quesadilla',
-    'chicken wings',
-    'chocolate cake',
-    'chocolate mousse',
-    'churros',
-    'clam chowder',
-    'club sandwich',
-    'crab cakes',
-    'creme brulee',
-    'croque madame',
-    'cup cakes',
-    'deviled eggs',
-    'donuts',
-    'dumplings',
-    'edamame',
-    'eggs benedict',
-    'escargots',
-    'falafel',
-    'filet mignon',
-    'fish and chips',
-    'foie gras',
-    'french fries',
-    'french onion soup',
-    'french toast',
-    'fried calamari',
-    'fried rice',
-    'frozen yogurt',
-    'garlic bread',
-    'gnocchi',
-    'greek salad',
-    'grilled cheese sandwich',
-    'grilled salmon',
-    'guacamole',
-    'gyoza',
-    'hamburger',
-    'hot and sour soup',
-    'hot dog',
-    'huevos rancheros',
-    'hummus',
-    'ice cream',
-    'lasagna',
-    'lobster bisque',
-    'lobster roll sandwich',
-    'macaroni and cheese',
-    'macarons',
-    'miso soup',
-    'mussels',
-    'nachos',
-    'omelette',
-    'onion rings',
-    'oysters',
-    'pad thai',
-    'paella',
-    'pancakes',
-    'panna cotta',
-    'peking duck',
-    'pho',
-    'pizza',
-    'pork chop',
-    'poutine',
-    'prime rib',
-    'pulled pork sandwich',
-    'ramen',
-    'ravioli',
-    'red velvet cake',
-    'risotto',
-    'samosa',
-    'sashimi',
-    'scallops',
-    'seaweed salad',
-    'shrimp and grits',
-    'spaghetti bolognese',
-    'spaghetti carbonara',
-    'spring rolls',
-    'steak',
-    'strawberry shortcake',
-    'sushi',
-    'tacos',
-    'takoyaki',
-    'tiramisu',
-    'tuna tartare',
-    'waffles'
-])
+class_predictions_indian_food_vision = array(['burger', 'butter_naan', 'chai', 'chapati', 'chole_bhature', 'dal_makhani', 'dhokla', 'fried_rice', 'idli', 'jalebi', 'kaathi_rolls', 'kadai_paneer', 'kulfi', 'masala_dosa', 'momos', 'paani_puri', 'pakode', 'pav_bhaji', 'pizza', 'samosa'])
 
 
 @app.get("/")
@@ -146,8 +44,8 @@ async def root():
     return {"message": "Welcome to the Food Vision API!"}
 
 
-@app.post("/net/image/prediction/")
-async def get_net_image_prediction(image_link: str = ""):
+@app.post("/net/image/prediction/food-vision/")
+async def get_net_image_prediction_food_vision(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
 
@@ -166,28 +64,26 @@ async def get_net_image_prediction(image_link: str = ""):
     img = img_array / 255.
 
 
-    pred = model.predict(img)
-    # Make a prediction
-    #pred = model.predict(tf.expand_dims(img, axis=0))
+    pred = model_food_vision.predict(img)
     score = softmax(pred[0])
 
 
     # Get the predicted class
     if len(pred[0]) > 1:  # check for multi-class
-        pred_class = class_predictions[pred.argmax()]  # if more than one output, take the max
+        pred_class = class_predictions_food_vision[pred.argmax()]  # if more than one output, take the max
     else:
-        pred_class = class_predictions[int(round(pred)[0][0])]  # if only one output, round
+        pred_class = class_predictions_food_vision[int(round(pred)[0][0])]  # if only one output, round
 
-    model_score1 = round(max(score) * 100, 2)
+    model_score = round(max(score) * 100, 2)
 
     return {
         "model-prediction": pred_class,
-        "model-prediction-confidence-score": model_score1
+        "model-prediction-confidence-score": model_score
     }
 
 
-@app.post("/net/image2/prediction/")
-async def get_net_image2_prediction(image_link: str = ""):
+@app.post("/net/image/prediction/indian-food-vision/")
+async def get_net_image_prediction_indian_food_vision(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
 
@@ -201,16 +97,19 @@ async def get_net_image2_prediction(image_link: str = ""):
 
     img_array = img_to_array(img)
     img_array = expand_dims(img_array, 0)
+    img_array/=255.
 
-    pred = model2.predict(img_array)
+    pred = model_indian_food_vision.predict(img_array)
     score = softmax(pred[0])
+    index = argmax(pred)
 
-    class_prediction2 = class_predictions2[argmax(score)]
-    model_score2 = round(max(score) * 100, 2)
+    pred_class = str(class_predictions_indian_food_vision[index].title())
+
+    model_score = round(max(score) * 100, 2)
 
     return {
-        "model-prediction": class_prediction2,
-        "model-prediction-confidence-score": model_score2
+        "model-prediction": pred_class,
+        "model-prediction-confidence-score": model_score
     }
 
 
