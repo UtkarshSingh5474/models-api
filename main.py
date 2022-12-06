@@ -44,7 +44,7 @@ async def root():
     return {"message": "Welcome to the Food Vision API!"}
 
 
-@app.post("/net/image/prediction/food-vision/")
+@app.get("/net/image/prediction/food-vision/")
 async def get_net_image_prediction_food_vision(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
