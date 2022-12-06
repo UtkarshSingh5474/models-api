@@ -77,12 +77,12 @@ async def get_net_image_prediction_food_vision(image_link: str = ""):
     model_score = round(max(score) * 100, 2)
 
     return {
-        "model-prediction": pred_class,
-        "model-prediction-confidence-score": model_score
+        "model_prediction": pred_class,
+        "model_prediction_confidence_score": model_score
     }
 
 
-@app.post("/net/image/prediction/indian-food-vision/")
+@app.get("/net/image/prediction/indian-food-vision/")
 async def get_net_image_prediction_indian_food_vision(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
@@ -108,8 +108,8 @@ async def get_net_image_prediction_indian_food_vision(image_link: str = ""):
     model_score = round(max(score) * 100, 2)
 
     return {
-        "model-prediction": pred_class,
-        "model-prediction-confidence-score": model_score
+        "model_prediction": pred_class,
+        "model_prediction_confidence_score": model_score
     }
 
 
