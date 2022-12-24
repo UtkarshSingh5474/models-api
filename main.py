@@ -10,6 +10,8 @@ from tensorflow.nn import softmax
 from numpy import argmax
 from numpy import max
 from numpy import array
+import pandas as pd
+import joblib
 import uvicorn
 import os
 
@@ -38,14 +40,16 @@ model_indian_food_vision = load_model(model_indian_food_vision_dir)
 
 class_predictions_indian_food_vision = array(['burger', 'butter_naan', 'chai', 'chapati', 'chole_bhature', 'dal_makhani', 'dhokla', 'fried_rice', 'idli', 'jalebi', 'kaathi_rolls', 'kadai_paneer', 'kulfi', 'masala_dosa', 'momos', 'paani_puri', 'pakode', 'pav_bhaji', 'pizza', 'samosa'])
 
+model_used_car_price_dir = "used_car_prediction_model.joblib"
+model_used_car_price = joblib.load(model_used_car_price_dir)
 
 @app.get("/")
 async def root():
     return {"message": "Welcome to the Food Vision API!"}
 
 
-@app.get("/net/image/prediction/food-vision/")
-async def get_net_image_prediction_food_vision(image_link: str = ""):
+@app.get("/prediction/food-vision/")
+async def get_image_prediction_food_vision(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
 
@@ -82,8 +86,8 @@ async def get_net_image_prediction_food_vision(image_link: str = ""):
     }
 
 
-@app.get("/net/image/prediction/indian-food-vision/")
-async def get_net_image_prediction_indian_food_vision(image_link: str = ""):
+@app.get("/prediction/indian-food-vision/")
+async def get_image_prediction_indian_food_vision(image_link: str = ""):
     if image_link == "":
         return {"message": "No image link provided"}
 
@@ -111,6 +115,24 @@ async def get_net_image_prediction_indian_food_vision(image_link: str = ""):
         "model_prediction": pred_class,
         "model_prediction_confidence_score": model_score
     }
+
+@app.post("/prediction/used-car-price/")
+async def get_prediction_used_car_price():
+
+    array = {'Year':[2015],'Kilometers_Driven':[41000 ],'Owner_Type':[1],'Seats':[5],'Mileage(km/kg)':[19.67],'Engine(CC)':[1582.0],'Power(bhp)':[126.20],'Location_Bangalore':[0],'Location_Chennai':[0],'Location_Coimbatore':[0],'Location_Delhi':[0],'Location_Hyderabad':[0],'Location_Jaipur':[0],'Location_Kochi':[0],'Location_Kolkata':[0],'Location_Mumbai':[0],'Location_Pune':[1],'Fuel_Type_Diesel':[1],'Fuel_Type_LPG':[0],'Fuel_Type_Petrol':[0],'Transmission_Manual':[1]}
+    df = pd.DataFrame(array)
+    pred = model_indian_food_vision.predict(df)
+    score = softmax(pred)
+    pred_class = str(pred)
+
+    model_score = round(max(score) * 100, 2)
+
+    return {
+        "model-prediction": pred_class,
+        "model-prediction-confidence-score": model_score
+    }
+
+
 
 
 if __name__ == "__main__":
