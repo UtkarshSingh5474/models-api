@@ -116,12 +116,12 @@ async def get_image_prediction_indian_food_vision(image_link: str = ""):
         "model_prediction_confidence_score": model_score
     }
 
-@app.post("/prediction/used-car-price/")
+@app.get("/prediction/used-car-price/")
 async def get_prediction_used_car_price():
 
     array = {'Year':[2015],'Kilometers_Driven':[41000 ],'Owner_Type':[1],'Seats':[5],'Mileage(km/kg)':[19.66],'Engine(CC)':[1582.0],'Power(bhp)':[126.20],'Location_Bangalore':[0],'Location_Chennai':[0],'Location_Coimbatore':[0],'Location_Delhi':[0],'Location_Hyderabad':[0],'Location_Jaipur':[0],'Location_Kochi':[0],'Location_Kolkata':[0],'Location_Mumbai':[0],'Location_Pune':[1],'Fuel_Type_Diesel':[1],'Fuel_Type_LPG':[0],'Fuel_Type_Petrol':[0],'Transmission_Manual':[1]}
     df = pd.DataFrame(array)
-    pred = model_indian_food_vision.predict(df)
+    pred = model_used_car_price.predict(df)
     score = softmax(pred)
     pred_class = str(pred)
 
