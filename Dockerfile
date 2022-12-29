@@ -1,4 +1,4 @@
-FROM python:3.10
+FROM python:3.10-slim-bullseye
 
 # Maintainer info
 LABEL maintainer="utkarshsingh.5474@gmail.com"
