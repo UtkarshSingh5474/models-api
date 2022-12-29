@@ -7,6 +7,9 @@ LABEL maintainer="utkarshsingh.5474@gmail.com"
 RUN  mkdir -p  /models-api
 WORKDIR  /models-api
 
+ENV PORT 8080
+ENV HOST 0.0.0.0
+
 # Upgrade pip with no cache
 RUN pip install --no-cache-dir -U pip
 
