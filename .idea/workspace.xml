@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b00eea6-0de9-4d78-824f-703079db2407" name="Changes" comment="added sklearn version 1.2.0">
+    <list default="true" id="2b00eea6-0de9-4d78-824f-703079db2407" name="Changes" comment="added sign language model,fruit vision model">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673694950782</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="added sign language model,fruit vision model">
+      <created>1675765176915</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1675765176915</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -198,19 +207,20 @@
     <MESSAGE value="added used-car-price-prediction(Changed python v)" />
     <MESSAGE value="added used-car-price-prediction(Changed python v) added port and host in dockerfile" />
     <MESSAGE value="added sklearn version 1.2.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="added sklearn version 1.2.0" />
+    <MESSAGE value="added sign language model,fruit vision model" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sign language model,fruit vision model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>178</line>
+          <line>181</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>176</line>
+          <line>179</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
