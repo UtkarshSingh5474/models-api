@@ -10,8 +10,6 @@ from tensorflow.nn import softmax
 from numpy import argmax
 from numpy import max
 from numpy import array
-import pandas as pd
-import pickle
 import joblib
 import uvicorn
 import os
