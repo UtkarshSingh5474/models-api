@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2b00eea6-0de9-4d78-824f-703079db2407" name="Changes" comment="added sklearn version 1.2.0">
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ILitaRJmoctxyQAR09hllIJOY4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/models/models-api&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\models\models-api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\models\models-api" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2b00eea6-0de9-4d78-824f-703079db2407" name="Changes" comment="" />
+      <created>1669967482665</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669967482665</updated>
+    </task>
+    <task id="LOCAL-00001" summary="food-vision and indian-food-vision">
+      <created>1670226854051</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670226854051</updated>
+    </task>
+    <task id="LOCAL-00002" summary="food-vision and indian-food-vision">
+      <created>1670230957973</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670230957973</updated>
+    </task>
+    <task id="LOCAL-00003" summary="food-vision and indian-food-vision">
+      <created>1670239033592</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670239033592</updated>
+    </task>
+    <task id="LOCAL-00004" summary="food-vision and indian-food-vision">
+      <created>1670240581499</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670240581499</updated>
+    </task>
+    <task id="LOCAL-00005" summary="food-vision and indian-food-vision">
+      <created>1670240810562</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670240810562</updated>
+    </task>
+    <task id="LOCAL-00006" summary="food-vision and indian-food-vision">
+      <created>1670240924255</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670240924255</updated>
+    </task>
+    <task id="LOCAL-00007" summary="added used-car-price-prediction">
+      <created>1671894864390</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671894864390</updated>
+    </task>
+    <task id="LOCAL-00008" summary="added used-car-price-prediction">
+      <created>1671895226659</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671895226659</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added used-car-price-prediction">
+      <created>1671895443704</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1671895443704</updated>
+    </task>
+    <task id="LOCAL-00010" summary="added used-car-price-prediction">
+      <created>1671897794849</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1671897794849</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added used-car-price-prediction(Fixed)">
+      <created>1672307871568</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1672307871568</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added used-car-price-prediction(Changed python v)">
+      <created>1672308927428</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1672308927428</updated>
+    </task>
+    <task id="LOCAL-00013" summary="added used-car-price-prediction(Changed python v)">
+      <created>1672309078491</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1672309078491</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added used-car-price-prediction(Changed python v)">
+      <created>1672309291415</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1672309291415</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added used-car-price-prediction(Changed python v) added port and host in dockerfile">
+      <created>1672309952733</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1672309952733</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added used-car-price-prediction(Changed python v) added port and host in dockerfile">
+      <created>1672334869454</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672334869454</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added sklearn version 1.2.0">
+      <created>1673694950782</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673694950782</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="food-vision and indian-food-vision" />
+    <MESSAGE value="added used-car-price-prediction" />
+    <MESSAGE value="added used-car-price-prediction(Fixed)" />
+    <MESSAGE value="added used-car-price-prediction(Changed python v)" />
+    <MESSAGE value="added used-car-price-prediction(Changed python v) added port and host in dockerfile" />
+    <MESSAGE value="added sklearn version 1.2.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="added sklearn version 1.2.0" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>178</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>176</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
