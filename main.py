@@ -28,18 +28,29 @@ app.add_middleware(
     allow_methods=methods,
     allow_headers=headers
 )
-
+#Food Vision Model
 model_food_vision_dir = "food_vision_model.h5"
 model_food_vision = load_model(model_food_vision_dir,
                                custom_objects={'KerasLayer':hub.KerasLayer})
-
 class_predictions_food_vision = array(['chicken_curry', 'chicken_wings', 'fried_rice', 'grilled_salmon' , 'hamburger', 'ice_cream' , 'pizza', 'ramen' , 'steak', 'sushi'])
 
+#Indian Food Vision Model
 model_indian_food_vision_dir = "indian_food_vision_model.h5"
 model_indian_food_vision = load_model(model_indian_food_vision_dir)
-
 class_predictions_indian_food_vision = array(['burger', 'butter_naan', 'chai', 'chapati', 'chole_bhature', 'dal_makhani', 'dhokla', 'fried_rice', 'idli', 'jalebi', 'kaathi_rolls', 'kadai_paneer', 'kulfi', 'masala_dosa', 'momos', 'paani_puri', 'pakode', 'pav_bhaji', 'pizza', 'samosa'])
 
+#Fruits Vision Model
+model_fruit_vision_dir = "fruits_vision_model.h5"
+model_fruit_vision = load_model(model_fruit_vision_dir)
+class_predictions_fruit_vision = array(["Apple Golden 1","Avocado","Banana","Cherry 1","Cocos","Kiwi",
+         "Lemon","Mango","Orange"])
+
+#Sign Language Model
+model_sign_language_dir = "sign_language_model.h5"
+model_sign_language = load_model(model_sign_language_dir)
+class_predictions_sign_language = array(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Delete', 'Nothing','Space'])
+
+#Car Price Model
 model_used_car_price_dir = "used_car_prediction_model.joblib"
 model_used_car_price = joblib.load(model_used_car_price_dir)
 
@@ -116,6 +127,65 @@ async def get_image_prediction_indian_food_vision(image_link: str = ""):
         "model_prediction_confidence_score": model_score
     }
 
+@app.get("/prediction/fruit-vision/")
+async def get_image_prediction_fruit_vision(image_link: str = ""):
+    if image_link == "":
+        return {"message": "No image link provided"}
+
+    img_path = get_file(
+        origin=image_link
+    )
+    img = load_img(
+        img_path,
+        target_size=(100, 100)
+    )
+
+    img_array = img_to_array(img)
+    img_array = expand_dims(img_array, 0)
+    img_array/=255.
+
+    pred = model_fruit_vision.predict(img_array)
+    score = softmax(pred[0])
+    index = argmax(pred)
+
+    pred_class = str(class_predictions_fruit_vision[index].title())
+
+    model_score = round(max(score) * 100, 2)
+
+    return {
+        "model_prediction": pred_class,
+        "model_prediction_confidence_score": model_score
+    }
+
+@app.get("/prediction/sign_language/")
+async def get_image_prediction_fruit_vision(image_link: str = ""):
+    if image_link == "":
+        return {"message": "No image link provided"}
+
+    img_path = get_file(
+        origin=image_link
+    )
+    img = load_img(
+        img_path,
+        target_size=(64, 64)
+    )
+
+    img_array = img_to_array(img)
+    img_array = expand_dims(img_array, 0)
+    #img_array/=255.
+
+    pred = model_sign_language.predict(img_array)
+    score = softmax(pred[0])
+    index = argmax(pred)
+
+    pred_class = str(class_predictions_sign_language[index].title())
+
+    model_score = round(max(score) * 100, 2)
+
+    return {
+        "model_prediction": pred_class,
+        "model_prediction_confidence_score": model_score
+    }
 @app.get("/prediction/used-car-price/")
 async def get_prediction_used_car_price():
 
